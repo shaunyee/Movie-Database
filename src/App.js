@@ -11,7 +11,7 @@ class App extends Component {
   
   async componentDidMount() {
     try {
-      const res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=a8cdfa69af55f80964d61a4a96025998&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1");
+      const res = await fetch(`https://api.themoviedb.org/3/discover/movie?${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`);
       
       const movies = await res.json();
       console.log(movies)
